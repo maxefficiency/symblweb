@@ -1,0 +1,52 @@
+/* 
+ * Стили для будущих доработок
+ * НЕ ИСПОЛЬЗУЮТСЯ в текущей версии
+ * Удалять по мере реализации
+ */
+
+/* 1. Будущие анимации */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* 2. Стили для будущего блога */
+.blog-post {
+  background: var(--bg-200);
+  border-left: 3px solid var(--accent-100);
+  transition: all 0.3s;
+}
+
+/* 3. Эффекты для расширенного портфолио */
+.portfolio-item-expanded {
+  grid-column: span 2;
+  position: relative;
+}
+
+/* 4. Формы (когда добавите) */
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* 5. Темная/светлая тема (заготовка) */
+@media (prefers-color-scheme: light) {
+  .theme-aware {
+    background: white;
+    color: black;
+  }
+}
+
+/* 6. Спецэффекты для премиум-клиентов */
+.premium-overlay {
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Инструкция по использованию:
+1. Создайте файл future.css
+2. Подключите его ПОСЛЕ основного styles.css
+3. По мере реализации переносите стили в styles.css
+4. Комментируйте реализованные блоки
+*/

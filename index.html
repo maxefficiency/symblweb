@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>symbl. 3D Fashion Motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="future.css">
+  <link rel="icon" type="image/x-icon" href="images/symbicon.png">
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="videos/hero-background.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>Раскройте историю вашего бренда с помощью 3D-моушн дизайна</h1>
+      <p>Создаем кинематографичные трейлеры и анимацию для игровых проектов</p>
+      <button class="cta-button open-modal">Обсудить проект →</button>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <h2>Наши работы</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <video autoplay muted loop>
+          <source src="videos/portfolio-1.mp4" type="video/mp4">
+        </video>
+        <h3>Трейлер для "Dark Realms"</h3>
+        <button class="section-cta open-modal">Заказать подобное →</button>
+      </div>
+      <div class="portfolio-item">
+        <video autoplay muted loop>
+          <source src="videos/portfolio-2.mp4" type="video/mp4">
+        </video>
+        <h3>Промо-ролик для мобильной игры</h3>
+        <button class="section-cta open-modal">Заказать подобное →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Что мы делаем</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="icon">🎥</div>
+        <h3>Трейлеры и тизеры</h3>
+        <p>Короткие, цепляющие ролики, которые рассказывают историю вашей игры.</p>
+        <button class="section-cta open-modal">Узнать стоимость →</button>
+      </div>
+      <div class="feature">
+        <div class="icon">📱</div>
+        <h3>Контент для соцсетей</h3>
+        <p>Анимированные посты и сторис для вовлечения аудитории.</p>
+        <button class="section-cta open-modal">Узнать стоимость →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="team">
+    <h2>Наша команда</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/petr.jpg" alt="Пётр Бобров" class="team-photo">
+        <h3>Пётр Бобров</h3>
+        <p>Lead 3D Artist</p>
+        <div class="social-links">
+          <a href="#" target="_blank">ArtStation</a>
+          <a href="https://t.me/TeoCGI" target="_blank">Telegram</a>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="images/max.jpg" alt="Максим Тенихин" class="team-photo">
+        <h3>Максим Тенихин</h3>
+        <p>Creative Producer</p>
+        <div class="social-links">
+          <a href="#" target="_blank">Behance</a>
+          <a href="https://t.me/maxefficency" target="_blank">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Свяжитесь с нами</h2>
+    <div class="contact-methods">
+      <a href="mailto:maximtenikhin@gmail.com" class="contact-button">Написать на email</a>
+      <a href="https://t.me/maxefficency" class="contact-button">Написать в Telegram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>symbl</h3>
+        <p>3D Моушн Дизайн для Фэшн Брендов</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#blog">Блог</a>
+        <a href="#contact">Контакты</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://vk.com/" target="_blank">VK</a>
+        <a href="https://youtube.com/" target="_blank">YouTube</a>
+        <a href="https://t.me/" target="_blank">Telegram</a>
+      </div>
+      <div class="footer-legal">
+        <a href="#privacy">Политика конфиденциальности</a>
+        <a href="#terms">Условия использования</a>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2025 symbl. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Form -->
+  <div class="modal" id="contact-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Обсудим ваш проект?</h3>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <select name="task" required>
+          <option value="" disabled selected>Выберите задачу</option>
+          <option value="Трейлер для игры">Трейлер для игры</option>
+          <option value="3D-превью товара">3D-превью товара</option>
+          <option value="Рекламный ролик">Рекламный ролик</option>
+          <option value="AR-примерка">AR-примерка</option>
+          <option value="Другое">Другое</option>
+        </select>
+        <button type="submit">Получить расчёт →</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
