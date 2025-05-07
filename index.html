@@ -10,13 +10,13 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="future.css">
   <link rel="icon" type="image/x-icon" href="images/symbicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
   <!-- Hero Section -->
   <section class="hero">
-    <video autoplay muted loop class="hero-video">
-      <source src="videos/hero-background.mp4" type="video/mp4">
-    </video>
+    <!-- Убрали видео, если используем анимацию -->
+    <div id="hero-animation"></div>
     <div class="hero-content">
       <h1>Раскройте историю вашего бренда с помощью 3D-моушн дизайна</h1>
       <p>Создаем кинематографичные трейлеры и анимацию для игровых проектов</p>
@@ -147,6 +147,7 @@
     </div>
   </div>
 
+  <script src="hero-animation.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
