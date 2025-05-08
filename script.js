@@ -5,6 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
   const openModalButtons = document.querySelectorAll('.open-modal');
   const closeModal = document.querySelector('.close-modal');
 
+  document.querySelectorAll('.custom-select').forEach(select => {
+    const header = select.querySelector('.select-header');
+    const options = select.querySelector('.select-options');
+    const hiddenInput = select.querySelector('input[type="hidden"]');
+    
+    header.addEventListener('click', () => {
+      options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    options.querySelectorAll('li').forEach(option => {
+      option.addEventListener('click', () => {
+        select.querySelector('.selected-value').textContent = option.textContent;
+        hiddenInput.value = option.dataset.value;
+        options.style.display = 'none';
+      });
+    });
+  });
+  
   // Открытие модалки
   openModalButtons.forEach(button => {
     button.addEventListener('click', function(e) {

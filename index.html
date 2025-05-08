@@ -134,14 +134,17 @@
       <form id="contact-form">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="email" name="email" placeholder="Email" required>
-        <select name="task" required>
-          <option value="" disabled selected>Выберите задачу</option>
-          <option value="Трейлер для игры">Трейлер для игры</option>
-          <option value="3D-превью товара">3D-превью товара</option>
-          <option value="Рекламный ролик">Рекламный ролик</option>
-          <option value="AR-примерка">AR-примерка</option>
-          <option value="Другое">Другое</option>
-        </select>
+        <div class="custom-select">
+          <div class="select-header">
+            <span class="selected-value">Выберите задачу</span>
+            <span class="arrow">▼</span>
+          </div>
+          <ul class="select-options">
+            <li data-value="Трейлер">Трейлер для игры</li>
+            <li data-value="3D-превью">3D-превью товара</li>
+          </ul>
+          <input type="hidden" name="task">
+        </div>
         <button type="submit">Получить расчёт →</button>
       </form>
     </div>
