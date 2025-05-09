@@ -46,18 +46,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Отправка формы
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
-      form.reset();
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
-  }
+  
+// Отправка формы
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
+    // Визуальный фидбэк
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<div class="loading"></div>';
+    submitBtn.disabled = true;
+
+    try {
+      // Собираем данные
+      const formData = new FormData(form);
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwDGUKAbIEfSC5Rx7HEet562hGM4MKdHVMehylncMAUWi1XotaLr7VhYmU7lphYHJ-9/exec', {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+      });
+
+      if (response.ok) {
+        alert('Данные отправлены!');
+        form.reset();
+        modal.style.display = 'none';
+      } else {
+        throw new Error('Ошибка сервера');
+      }
+    } catch (error) {
+      alert('Ошибка: ' + error.message);
+    } finally {
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+  
   // Плавный скролл
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
