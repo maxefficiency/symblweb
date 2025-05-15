@@ -148,6 +148,14 @@
           </ul>
           <input type="hidden" name="task">
         </div>
+        <!-- Поле комментария (добавлено сразу после селекта) -->
+        <div id="comment-field" style="display: none;">
+          <textarea 
+            name="comment" 
+            placeholder="Опишите вашу задачу подробнее"
+            class="form-textarea"
+          ></textarea>
+        </div>
         <button type="submit">Получить расчёт →</button>
       </form>
     </div>
@@ -155,5 +163,6 @@
 
   <script src="hero-animation.js"></script>
   <script src="script.js"></script>
+  <div class="notification" id="notification"></div>
 </body>
 </html>

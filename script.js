@@ -9,7 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = select.querySelector('.select-header');
     const options = select.querySelector('.select-options');
     const hiddenInput = select.querySelector('input[type="hidden"]');
-    
+
+    // Показ/скрытие поля комментария
+  document.querySelector('input[name="task"]').addEventListener('change', function() {
+  const commentField = document.getElementById('comment-field');
+  commentField.style.display = this.value === 'Другое' ? 'block' : 'none';
+});
+
+
     header.addEventListener('click', () => {
       options.style.display = options.style.display === 'block' ? 'none' : 'block';
     });
@@ -19,10 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         select.querySelector('.selected-value').textContent = option.textContent;
         hiddenInput.value = option.dataset.value;
         options.style.display = 'none';
+
+         // Показываем поле комментария только для "Другое"
+        document.getElementById('comment-field').style.display = 
+          option.dataset.value === 'Другое' ? 'block' : 'none';
       });
     });
   });
-  
+
   // Открытие модалки
   openModalButtons.forEach(button => {
     button.addEventListener('click', function(e) {
@@ -53,12 +64,33 @@ if (form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // Визуальный фидбэк
+      // Валидация (добавьте в самое начало)
+  if (!form.checkValidity()) {
+    // Показывает браузерные подсказки обязательных полей
+    form.reportValidity();
+    return; // Прерываем отправку
+  }
+
+    // Визуальный фидбэк (лоадер)
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<div class="loading"></div>';
     submitBtn.disabled = true;
 
+    // Функция уведомлений (добавьте в начало script.js)
+function showNotification(message) {
+  const notification = document.getElementById('notification');
+  notification.textContent = message;
+  notification.style.display = 'block';
+  
+  setTimeout(() => {
+    notification.style.opacity = '0';
+    setTimeout(() => {
+      notification.style.display = 'none';
+      notification.style.opacity = '1';
+    }, 300);
+  }, 3000);
+}
     try {
       // Собираем данные
       const formData = new FormData(form);
@@ -68,14 +100,14 @@ if (form) {
       });
 
       if (response.ok) {
-        alert('Данные отправлены!');
+        showNotification('✅ Данные отправлены!'); // Замена первого alert
         form.reset();
         modal.style.display = 'none';
       } else {
         throw new Error('Ошибка сервера');
       }
     } catch (error) {
-      alert('Ошибка: ' + error.message);
+      showNotification('❌ ' + error.message); // Замена второго alert
     } finally {
       submitBtn.innerHTML = originalBtnText;
       submitBtn.disabled = false;
