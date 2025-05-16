@@ -1,3 +1,14 @@
+// Функции для блокировки/разблокировки скролла
+function disablePageScroll() {
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden'; // На всякий случай
+}
+
+function enablePageScroll() {
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+}
+
 // Modal functionality и весь остальной код
 document.addEventListener('DOMContentLoaded', function() {
   // 1. Модальные окна
@@ -39,21 +50,21 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', function(e) {
       e.preventDefault();
       modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
+      disablePageScroll(); // Используем новую функцию. ВМЕСТО document.body.style.overflow = 'hidden';
     });
   });
 
   // Закрытие модалки
   closeModal.addEventListener('click', function() {
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    enablePageScroll(); // Используем новую функцию. ВМЕСТО document.body.style.overflow = 'auto';
   });
 
   // Закрытие по клику снаружи
   window.addEventListener('click', function(e) {
     if (e.target === modal) {
       modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+      enablePageScroll(); // Новая функция включения скролла
     }
   });
 
@@ -103,11 +114,13 @@ function showNotification(message) {
         showNotification('✅ Данные отправлены!'); // Замена первого alert
         form.reset();
         modal.style.display = 'none';
+        enablePageScroll(); // Важно: разблокируем скролл здесь!
       } else {
         throw new Error('Ошибка сервера');
       }
     } catch (error) {
       showNotification('❌ ' + error.message); // Замена второго alert
+      enablePageScroll(); // И здесь на случай ошибки!
     } finally {
       submitBtn.innerHTML = originalBtnText;
       submitBtn.disabled = false;

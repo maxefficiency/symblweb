@@ -18,3 +18,16 @@
 - Gaps in options
 - More torus customization (?)
 - Pseudopage after form completed
+
+17.05.2025 
+## Update 3
+- Fixed comment field resizing. Now set to none
+- Form margins and padding visually improved, including the dropdown menu (leftoff gaps removed)
+- Form textarea and inputs transitions on click added
+- Fixed weird scroll behavior. Added custom centralised js functions to switch scroll on / off after interactions with the modal.
+Details: the scroll was blocked after form completion, error, outside click (only worked after pressing x); also general page scroll appeared with the comment field and the loading circle; fixed all those as well.
+
+### To consider
+- Popup with a leadmagnet
+- CRM integration
+

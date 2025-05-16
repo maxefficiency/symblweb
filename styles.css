@@ -269,6 +269,7 @@ input, select {
   border-radius: 4px;
   appearance: none;
   -webkit-appearance: none;
+  transition: 0.3s ease;
 }
 
 option {
@@ -296,9 +297,12 @@ option {
   border-radius: 4px;
   margin-top: 5px;
   z-index: 10;
+  padding: 0; /* Убираем внутренний отступ */
+  margin: 0;  /* Убираем внешний отступ */
 }
 .select-options li {
-  padding: 10px;
+  padding: 10px 12px;
+  margin: 0; 
   list-style: none; /* Убираем маркеры списка */
   font-size: 14px; /* Единый размер шрифта */
   cursor: pointer;
@@ -361,7 +365,12 @@ button[type="submit"] {
   border: 1px solid var(--accent-100);
   color: var(--text-100);
   margin-top: 10px;
-  transition: all 0.3s;
+  transition: all 0.3s ease; /* Добавил изинг */
+  resize: none; /* Отключаем ресайз */
+  min-width: 100%; /* Фиксируем ширину */
+  box-sizing: border-box; /* Учитываем padding в ширине */
+  margin: 0; /* Убираем внешние отступы */
+
 }
 .notification {
   position: fixed;
