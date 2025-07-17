@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       tubeRadius: window.innerWidth < 768 ? 25 : 80,
       segments: window.innerWidth < 768 ? 10 : 20,
       points: [],
-      position: { x: 0.3, y: -0.2 }
+      position: { x: 0.125, y: 0.1 }
     };
 
     // Фиксированные настройки взаимодействия

@@ -1,0 +1,4 @@
+User-agent: *  
+Disallow: /  
+Disallow: /private/
+Sitemap: http://symblmotion.agency/sitemap.xml
