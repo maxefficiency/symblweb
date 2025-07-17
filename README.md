@@ -31,3 +31,26 @@ Details: the scroll was blocked after form completion, error, outside click (onl
 - Popup with a leadmagnet
 - CRM integration
 
+18.07.2025
+## Update 4
+- Added robots.txt
+- Added Meta tags for SEO (name, description, keywords), Social networks (og:name, og:description, og:image*)
+- Added sitemap.xml
+- Added Google Analytics (and Google tag)
+
+  
+- Added SSL certificate (on ispmanager)
+- Also set some redirects and caching
+
+- Compressed images for better loading
+
+  **Design-wise**
+- Prototype of eyes animation for features section (prototypes directory)
+- Slightly moved the donut in Hero
+- Rewrote filler texts in particular sections (Portfolio, Features). Instead of gaming-industry placeholder there are now proper fashion ones.
+
+### To consider and to update
+*og:image needs to be created in the nearest future
+- Potentially: add hero-donut overflow. It's a bit confusing (ran into a bug due to specific cursor interaction). Will have to dive deeper in case implementation needed.
+- Surfed SpeedInsights for optimisation cues. Decided not to invest time into scripts and styles optimisation as it's a one-page site. But worth future consideration!
+- Might have forgot some info so README will be edited with a 'P.S' (if not, then everything was noted correctly)
